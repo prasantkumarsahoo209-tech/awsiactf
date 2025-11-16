@@ -23,7 +23,7 @@ resource "aws_subnet" "awsec2demo" {
 ## AWS Network Interface
 resource "aws_network_interface" "awsec2demo" {
  subnet_id = aws_subnet.awsec2demo.id
- private_ips = ["172.16.10.100"]
+ private_ips = ["172.16.10.101"]
 
  tags = {
    Name = "ENI-quickcloudpocs"
@@ -51,4 +51,5 @@ resource "aws_instance" "awsec2demo" {
    network_interface_id = aws_network_interface.awsec2demo.id
    device_index = 0
   }
+
 } 
